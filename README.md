@@ -131,6 +131,42 @@ folderpath> jest --watch
 ~~~
 
 ### [13] BeforeEach and BeforeAll
-* BeforeEach runs a block of code before each test
+* BeforeEach runs a block of code before each test.
 * Usefull for setting up databases, mock instances, etc.
-* BeforeAll runs code just once, before the first test
+* BeforeAll runs code just once, before the first test.
+
+### [14] AfterEach and AfterAll
+* Inverse version of BeforeEach and BeforeAll
+* Runs a block of code after each test (or after the last test).
+* useful for closing open connections, terminating sub-processes.
+
+### [15] What are Asynchoronous Tests?
+* Contains assertions (like a regular test).
+* Does not complete instantaneously.
+* Can take varying amount of time, even an unknown amount of time.
+* Jest must be notified that test is complete.
+
+### [16] Defining Asynchoronous Tests
+* Invoke the done() callback that is passed to the test
+* Return a promise from a test
+* Pass an async function to describe
+
+### Examples
+~~~bash
+it("async test 1", done => {
+    setTimeout(done,100)
+});
+~~~
+
+~~~bash
+it("async test 2", () => {
+    return new Promise(
+        resolve => setTimeout(resolve, 100)
+    )
+});
+~~~
+
+~~~bash
+it("async test 3", async () => await delay(100)
+);
+~~~
