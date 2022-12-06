@@ -66,8 +66,17 @@
     *        Snapshot      Yes         No
     *        Mocking       Yes         No
 
-### [8] Jest Version
 * Jest
     * The actual test-runner library which you use to execute your tests
+
 * Jest CLI
     * A tool that you use from the command line to provide configuration options to Jest
+
+# Test Running with Jest
+
+### [8] Jest Installation
+* Jest Installation
+ Step 1:
+~~~bash  
+  npm install -g jest-cli
+~~~  
