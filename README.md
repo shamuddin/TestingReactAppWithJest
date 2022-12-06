@@ -76,7 +76,7 @@
 
 ### [8] Jest Installation
 * Jest Installation
- Step 1:
+Step 1:
 ~~~bash  
   npm install -g jest-cli
 ~~~  
