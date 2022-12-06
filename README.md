@@ -75,8 +75,10 @@
 # Test Running with Jest
 
 ### [8] Jest Installation
-* Jest Installation
 Step 1:
+
 ~~~bash  
   npm install -g jest-cli
 ~~~  
+ 
+
