@@ -75,10 +75,62 @@
 # Test Running with Jest
 
 ### [8] Jest Installation
-Step 1:
+Step 1: Install dependencies
+~~~bash  
+npm install && npm run postinstall
+~~~  
 
+Step 2: Install Jest CLI
 ~~~bash  
   npm install -g jest-cli
 ~~~  
- 
 
+Step 3: Run Cmd jest
+~~~bash  
+  folderPath> jest
+~~~  
+
+If you expect below erroe message:
+~~~bash 
+jest.ps1 is not digitally signed. You cannot run this script on the         
+current system. For more information about running scripts
+and setting execution policy, see about_Execution_Policies
+at https:/go.microsoft.com/fwlink/?LinkID=135170.
+~~~  
+
+Execute this cmd:
+~~~bash 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+~~~
+
+Step 4: Add Jest test script in package.json 
+~~~bash
+"test": "jest"
+~~~
+
+### [9] How are test files identified
+* Any files inside a folder named __tests__ are considered tests.
+* Any Files with .spec or .test in their filename are considered tests.
+
+### [10] Jest Globals
+* IT (Test)
+    * Method which you pass a function to that function is executed as block of tests by the test runner
+* DESCRIBE (SUITE)
+    * An optional method for grouping any number of IT or test statements
+
+### [11] Create a test folder src/components
+* Create a __test__ folder
+* Create a test file named "QuestionDetail.js"
+* Create a test file named "QuestionList.spec.js"
+
+### [12] Jest Watching for Changes
+
+Watch for Changes - Terminal
+~~~bash
+folderpath> jest --watch
+~~~
+
+### [13] BeforeEach and BeforeAll
+* BeforeEach runs a block of code before each test
+* Usefull for setting up databases, mock instances, etc.
+* BeforeAll runs code just once, before the first test

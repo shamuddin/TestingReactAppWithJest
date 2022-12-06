@@ -1,7 +1,6 @@
 {
-  "name": "isomorphic-react",
+  "name": "Test React with Jest",
   "version": "1.0.0",
-  "description": "An isomorphic React application implementing latest development standards",
   "main": "index.js",
   "scripts": {
     "build": "cross-env webpack --config ./webpack.config.prod.babel.js",
@@ -14,7 +13,6 @@
     "test-update-snapshots": "jest -u"
   },
   "keywords": [],
-  "author": "Daniel Stern (Code Whisperer)",
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.0.0",
