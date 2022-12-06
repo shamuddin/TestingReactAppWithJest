@@ -9,7 +9,6 @@
 ### [2] Version Check  (Not appliciable for React 17.0 or latest)
 * React 16.0.0 [v16.0.0 to v16.4.0]
 * Jest 26.6.3 
-* Node.js 9.2.0
 
 ### [3] Objectives
 * General understanding of testing and realted architecture (How, Why).
@@ -60,9 +59,15 @@
     * Potentially useful but not for every project.
 
 * Jest vs. Mocha
-    *               Jest        Mocha
-    * Runs Tests    Yes         Yes
-    * Async         Yes         Yes
-    * Spies         Yes         No
-    * Snapshot      Yes         No
-    * Mocking       Yes         No
+    *                     Jest        Mocha
+    *        Runs Tests    Yes         Yes
+    *        Async         Yes         Yes
+    *        Spies         Yes         No
+    *        Snapshot      Yes         No
+    *        Mocking       Yes         No
+
+### [8] Jest Version
+* Jest
+    * The actual test-runner library which you use to execute your tests
+* Jest CLI
+    * A tool that you use from the command line to provide configuration options to Jest
