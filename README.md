@@ -147,9 +147,9 @@ folderpath> jest --watch
 * Jest must be notified that test is complete.
 
 ### [16] Defining Asynchoronous Tests
-* Invoke the done() callback that is passed to the test
-* Return a promise from a test
-* Pass an async function to describe
+* Invoke the done() callback that is passed to the test.
+* Return a promise from a test.
+* Pass an async function to describe.
 
 ### Examples
 ~~~bash
@@ -170,3 +170,74 @@ it("async test 2", () => {
 it("async test 3", async () => await delay(100)
 );
 ~~~
+
+### [17] Understanding Jest Mocks
+* Why Mocking
+    * Reduce dependencies required by tests (Faster execution).
+    * Prevent side-effects during testing.
+    * Build custom mock to facilitate desired testing procedures.
+
+### [18] What is a Mock
+* Convincing duplicate of an object with no internal workings.
+* Can be automatically or manually created.
+* Has same API as original side-effects.
+* Spies and other mock features simplify testing.
+
+### [19] The Mocking Processes
+* Scan the original object for methods, give the new object spy methods with same names.
+* Ensure that any methods which returned a promise still return a promise in the mock.
+* Create mocks for any complex values that are returned from the methods which are required for tests.
+
+### [20] Mock Functions
+* Also known as "Spies".
+* No side-effects.
+* Counts function calls.
+* Records arguments passed when they called.
+* Can be "Loaded" with return values.
+* Return value must approximate original.
+
+### [21] Creating Mock Files
+* Appropriately named NPM mock are loaded automatically.
+* Mocks must reside in a __mocks__ folder next to mocked modules.
+* NPM modules and local modules can both be mocked.
+
+### [22] What is a Snapshot
+* JSON-based record of a component's output.
+* Compared to component's actual output during testing process.
+* Committed along with other modules and tests to the application repo.
+
+### [23] The Snapshot testing process
+* Developer A authors a new component.
+* Snapshot of that component's output is generated automatically.
+* Developer A commits changes, moves on.
+* Developer B makes a breaking change to a dependency of the new component.
+* A new snapshot is automatically generated.
+* Since the snapshots don't match, the test suite will fail until updated.
+
+### [24] What does testing React Component Mean
+* Verify output has not regressed.
+* Ensure that rarely occuring corner cases produces the correct output.
+* If component generates side effects, verify they occur but do not execute them.
+* Verify user interactions are handled as expected.
+
+### [25] Constructing Testable React Components
+* Components may or may not have lifecycle handlers.
+* Components may or may not have internal state.
+* Components may or may not generate side effects.
+* Component may get state from arguments, or from external dependencies.
+* No internal state
+    * Output is an idepotent product of the props that are provided.
+* No side-effects
+    * Any AJAX calls, UI changes or other side effects are handled by sagas, thunks, etc., but not by components.
+* No lifecycle hooks
+    * Fetching data is handled on the application level, not the component level.
+
+### [26] React Redux and Jest
+* Components don't generate side effects.
+* Component consists of logical display and container components.
+* Components do not have internal state.
+
+### Testing React Redux Components
+* Test Container and Display elements separately.
+* Use unit tests to verify methods and properties passed by container are accurate.
+* Use snapshot tests to verify the output of the display component, passing props in directly.
