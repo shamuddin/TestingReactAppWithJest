@@ -237,7 +237,63 @@ it("async test 3", async () => await delay(100)
 * Component consists of logical display and container components.
 * Components do not have internal state.
 
-### Testing React Redux Components
+### [27] Testing React Redux Components
 * Test Container and Display elements separately.
 * Use unit tests to verify methods and properties passed by container are accurate.
 * Use snapshot tests to verify the output of the display component, passing props in directly.
+
+### [28] Testing Statefull React Components
+* Mock dependencies, then test them.
+* Use spies to verify side-effects.
+* Move logic from lifecycle to services.
+* Prevent regression with snapshot.
+* Inject values by writing mocks for services.
+* Make stateless components, where possible.
+
+### [29] What is a Matcher
+* Also known as an assertion or expectation.
+* Represents a claim that a value will be equal (or not) to something.
+* Throws an error (test fails) if matcher's claim is not validated.
+
+* HandWritten test
+~~~bash
+function test(){
+    const value = getValue42();
+    if(value !== 42){
+        throw new Error("/**/")
+    }
+}
+~~~
+* If statement (condition).
+* Throw an error.
+* In test runner, the error result in test .failing, not in the application failing.
+
+* Matchers
+~~~bash
+function test2(){
+    const value = getValue42();
+    expect(value).toEqual(42);
+}
+~~~
+* Equivalent test using a mathcer.
+* Matcher is equivalent to if statement above.
+
+### [30] Exploring Matcher
+* Guide URL : https://jestjs.io/docs/getting-started
+
+* "Not" Matcher
+    * Reverses an assertion.
+    * If assertion without not would pass, asertion with not will fail.
+
+* "To Be" and "To Equal" Matcher
+    * Verify that two values are equivalent.
+    * Two arrays with matching elements are equal, but not identical.
+    * Very general - use more specific matcher when possible.
+
+* "To Be Close To" Matcher
+    * Like toEqual for numbers, but assertion still passes if number are close but not equal.
+    * For assertions involving floating point numbers.
+
+* "To Contain" & "To Have Length"
+    * Array matcher which verify the contents and size of a collection.
+    * More succinct than combining toEqual with array operators includes, length, etc.
